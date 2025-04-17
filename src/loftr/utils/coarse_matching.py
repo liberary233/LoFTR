@@ -67,8 +67,11 @@ class CoarseMatching(nn.Module):
         self.train_coarse_percent = config['train_coarse_percent']
         self.train_pad_num_gt_min = config['train_pad_num_gt_min']
 
+
+        
         # we provide 2 options for differentiable matching
         self.match_type = config['match_type']
+        print(config['match_type'])
         if self.match_type == 'dual_softmax':
             self.temperature = config['dsmax_temperature']
         elif self.match_type == 'sinkhorn':
